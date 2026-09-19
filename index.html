@@ -1,0 +1,173 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>letter for youu ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="hearts">
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+    </div>
+
+    <!-- Music -->
+    <audio id="loveSong" loop>
+        <source src="come-inside-of-my-heart.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- Opening Screen -->
+    <section class="opening" id="opening">
+
+        <div class="small-heart">♡</div>
+
+        <h1>For You</h1>
+
+        <p class="subtitle">
+            I made something special for you...
+        </p>
+
+        <button onclick="openLetter()">
+            Open this Letter
+        </button>
+
+    </section>
+
+
+    <!-- Letter -->
+    <section class="letter-container" id="letter">
+
+        <div class="letter">
+
+            <div class="music-note">♪</div>
+
+            <p class="dear">Dear You,</p>
+
+            <h1>Hi Azumi</h1>
+
+            <p>
+                i know this is to sudden to ask and it's only been a week na mag 
+                kakilala tayu and i'll take the risk, no i'll will take the risk to ask you 
+                this, can i court you, wag ka mag alala i wont take your time you can focus on your study, 
+                i wont disturb you and im willing to wait for you, no worries even if you dont answer right away
+                im just letteng you know 
+            </p>
+
+            <p>
+                Somehow, you became someone very special to me.
+                Someone I look forward to talking to,
+                someone who can make an ordinary day feel
+                a little more beautiful.
+            </p>
+
+            <p>
+                thpse simple action make me feel safe 
+            </p>
+
+            <p>
+                So if you ever wonder how much you mean to me,
+                just remember this little letter.
+                It may only be a simple website,
+                but every word here comes from my heart, and i really mean it.
+            </p>
+
+            <p>
+                Thank you for being someone worth writing
+                a whole letter for.
+            </p>
+
+            <div class="final-message">
+                If you let me...
+
+                <br><br>
+
+                <strong>
+                    I'll try my best.
+                </strong>
+            </div>
+
+            <div class="signature">
+                Forever yours,<br>
+                <span>♡ Your Name</span>
+            </div>
+
+            <div class="music-player">
+
+                <button onclick="toggleMusic()" id="musicButton">
+                    ❚❚
+                </button>
+
+                <div>
+                    <p class="song-title">
+                       Mundo
+                    </p>
+
+                    <p class="artist">
+                        IV of Spades
+                        pwede ba maging mundo mo
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function openLetter() {
+
+            document.getElementById("opening").style.display = "none";
+
+            document.getElementById("letter").style.display = "flex";
+
+            const song = document.getElementById("loveSong");
+
+            song.play().catch(error => {
+                console.log("Music could not autoplay:", error);
+            });
+        }
+
+
+        function toggleMusic() {
+
+            const song = document.getElementById("loveSong");
+
+            const button = document.getElementById("musicButton");
+
+            if (song.paused) {
+
+                song.play();
+
+                button.innerHTML = "❚❚";
+
+            } else {
+
+                song.pause();
+
+                button.innerHTML = "▶";
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
