@@ -1,0 +1,412 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #12070d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+.opening {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center,
+        #542033 0%,
+        #281019 45%,
+        #12070d 100%);
+}
+
+.small-heart {
+    font-size: 70px;
+    color: #ff789d;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.opening h1 {
+    margin-top: 20px;
+
+    font-size: 70px;
+
+    font-weight: normal;
+
+    color: #ffe4ec;
+
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    margin-top: 15px;
+
+    color: #d9a9b8;
+
+    font-size: 18px;
+}
+
+.opening button {
+    margin-top: 35px;
+
+    padding: 15px 35px;
+
+    border: 1px solid #ff789d;
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.opening button:hover {
+    background: #ff789d;
+
+    color: #200812;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-container {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at top,
+        #512032,
+        #1b0a12 65%);
+}
+
+.letter {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    padding: 55px;
+
+    background: rgba(255, 248, 250, 0.97);
+
+    color: #35141f;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5);
+
+    animation: letterAppear 1s ease;
+}
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   LETTER CONTENT
+========================= */
+
+.music-note {
+    text-align: center;
+
+    color: #c9476b;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.dear {
+    color: #8e5263;
+
+    font-style: italic;
+
+    margin-bottom: 20px;
+}
+
+.letter h1 {
+    text-align: center;
+
+    color: #9d3152;
+
+    font-size: 35px;
+
+    font-weight: normal;
+
+    margin-bottom: 35px;
+}
+
+.letter p {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+    text-align: center;
+
+    margin: 35px 0;
+
+    padding: 25px;
+
+    border-top: 1px solid #e5b7c4;
+
+    border-bottom: 1px solid #e5b7c4;
+
+    color: #8f3854;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+.final-message strong {
+    font-size: 21px;
+
+    color: #a52d53;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature {
+    text-align: right;
+
+    margin-top: 35px;
+
+    color: #76505c;
+
+    font-style: italic;
+
+    line-height: 1.8;
+}
+
+.signature span {
+    color: #a52d53;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+    margin-top: 40px;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-radius: 50px;
+
+    background: #f4dce3;
+}
+
+.music-player button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #a52d53;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.music-player button:hover {
+    transform: scale(1.1);
+
+    background: #c9476b;
+}
+
+.song-title {
+    margin: 0 !important;
+
+    font-size: 15px !important;
+
+    font-weight: bold;
+}
+
+.artist {
+    margin: 2px 0 0 !important;
+
+    font-size: 13px !important;
+
+    color: #906472;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts span {
+    position: fixed;
+
+    bottom: -30px;
+
+    color: #ff7198;
+
+    font-size: 25px;
+
+    opacity: 0.4;
+
+    animation: floating 8s linear infinite;
+
+    pointer-events: none;
+}
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+    left: 45%;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(4) {
+    left: 65%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(6) {
+    left: 95%;
+    animation-delay: 5s;
+}
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .opening h1 {
+        font-size: 45px;
+    }
+
+    .letter {
+        padding: 30px 25px;
+    }
+
+    .letter h1 {
+        font-size: 27px;
+    }
+
+    .letter p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .final-message strong {
+        font-size: 18px;
+    }
+}
+```
+
